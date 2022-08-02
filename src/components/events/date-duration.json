@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_events_date_durations",
+  "info": {
+    "displayName": "date_duration",
+    "icon": "calendar-alt"
+  },
+  "options": {},
+  "attributes": {
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "all_day": {
+      "type": "boolean",
+      "default": false
+    },
+    "start_time": {
+      "type": "time"
+    },
+    "end_time": {
+      "type": "time"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "handle": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "registered_attendees": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "required": true
+    },
+    "speakers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::speaker.speaker",
+      "inversedBy": "events"
+    },
+    "performers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::performer.performer",
+      "inversedBy": "events"
+    },
+    "event_time": {
+      "type": "component",
+      "repeatable": false,
+      "component": "events.date-duration"
+    }
+  }
+}

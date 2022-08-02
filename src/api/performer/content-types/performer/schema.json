@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "performers",
+  "info": {
+    "singularName": "performer",
+    "pluralName": "performers",
+    "displayName": "Performer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "handle": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "performers"
+    }
+  }
+}
